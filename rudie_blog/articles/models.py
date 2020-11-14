@@ -20,12 +20,12 @@ class Author(UserBaseModel):
         return " ".join([x for x in [self.first_name, self.last_name] if x])
 
 
-class Post(BaseModel):
+class Article(BaseModel):
 
     title = models.CharField(max_length=100)
     context = models.TextField()
 
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    # author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.context
